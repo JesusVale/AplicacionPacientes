@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedienting | Inicio</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__titulo">Iniciar Sesión</h1>
+        <h2 class="header__subtitulo">Introduzca sus datos</h2>
+    </header>
+
+    <main>
+        <form class="form form--login">
+            <div class="form__campo">
+                <label for="email" class="form__label">Teléfono</label>
+                <input type="email" class="form__input form__input--email" name="email">
+            </div>
+            <div class="form__campo">
+                <label for="password" class="login__label">Contraseña</label>
+                <input type="password" name="password" class="form__input form__input--password">
+            </div>
+            <input type="submit" value="Iniciar Sesión" class="form__submit btn">
+        </form>
+    </main>
+
+    <div class="registro">
+        <p class="registo__texto">No tengo cuenta <a href="registro.html">Registrate</a></p>
+    </div>
+
+    <script src="./js/login.js" type="module"></script>
+
+</body>
+</html>
