@@ -23,7 +23,7 @@ async function submitLogin(e){
 
         localStorage.setItem("pacienteid", nss);
 
-        window.location.href = "../inicio.html"
+        window.location.href = "../notificaciones.html"
     } else{
         mostrarError("Usuario o Contraseña Incorrectos");
     }

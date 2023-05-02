@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", (e) =>{
 
     websocket.onmessage = manejarMensaje
 
+    websocket.onclose = (e) =>{
+        console.log("Se cerró :(")
+    }
+
     
 })
 
