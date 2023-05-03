@@ -13,11 +13,12 @@ document.addEventListener("DOMContentLoaded", (e) =>{
 
     }
     const usuarioString = JSON.stringify(usuario);
+    console.log(usuarioString)
     websocket = new WebSocket(`ws://localhost:8080/ServidorNotificaciones/websocketendpoint/${usuarioString}`)
 
 
     websocket.onopen = evt =>{
-        websocket.send(usuarioString);
+        //websocket.send(usuarioString);
     }
 
     websocket.onmessage = manejarMensaje
@@ -41,10 +42,10 @@ function manejarMensaje(evt){
         buttonPermiso.textContent = "Dar Permiso"
         buttonPermiso.addEventListener("click", async () => {
             await registrarPermiso({cedulaMedico: datos, idPaciente: usuario.identificador})
-            websocket.send({
+            websocket.send(JSON.stringify({
                 destinatario: datos,
-                tipo: "Expediente Subido"
-            })
+                evento: "Expediente Subido"
+            }))
         })
         div.appendChild(pNombre);
         div.appendChild(buttonPermiso);
