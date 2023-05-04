@@ -15,11 +15,10 @@
         </nav>
     </header>
 
-    <main class="doctores">
-        <div class="permiso">
-            <button class="permiso__btn">Dar Acceso</button>
-        </div>
-    </main>
-
+    <form class="upload-form" method="POST" action="http://localhost:8094/expedientes/uploadFile" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Enviar archivo</button>
+    </form>
+    <script src="./js/peticiones.js" type="module"></script>
 </body> 
 </html>

@@ -1,4 +1,5 @@
 const URL = "http://localhost:8094"
+//const descargarBoton = document.getElementById("descargar-archivo");
 
 //Pacientes
 async function iniciarSesion(paciente){
