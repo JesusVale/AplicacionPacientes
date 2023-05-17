@@ -6,9 +6,9 @@ let usuario = null;
 let websocket = null;
 
 document.addEventListener("DOMContentLoaded", (e) =>{
-    const identificador = localStorage.getItem("pacienteid");
+    const nss = localStorage.getItem("nss");
     usuario = {
-        identificador,
+        identificador: nss,
         tipo: "Paciente"
 
     }
@@ -41,7 +41,7 @@ function manejarMensaje(evt){
         const buttonPermiso = document.createElement("button")
         buttonPermiso.textContent = "Dar Permiso"
         buttonPermiso.addEventListener("click", async () => {
-            await registrarPermiso({cedulaMedico: datos, idPaciente: usuario.identificador})
+            await registrarPermiso({cedulaMedico: datos, nss: usuario.identificador})
             websocket.send(JSON.stringify({
                 destinatario: datos,
                 evento: "Expediente Subido"

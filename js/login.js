@@ -14,20 +14,23 @@ async function submitLogin(e){
         contrasenia
     }
 
-    const resultado = await iniciarSesion(paciente);
+    let  resultado
+    try{
+        resultado = await iniciarSesion(paciente);
 
+        //Guarda el NSS y el token del paciente para que pueda autenticarse
+        const {body} = resultado
+        const {nss} = body
+        const {token} = body
+        localStorage.setItem("nss", nss)
+        localStorage.setItem("token", token)
 
-    if(resultado){
-
-        const {nss} = resultado;
-
-        localStorage.setItem("pacienteid", nss);
-
+        //Te redirecciona al inicio
         window.location.href = "../inicio.html"
-    } else{
-        mostrarError("Usuario o Contraseña Incorrectos");
-    }
 
+    }catch(e){
+        mostrarError(e);
+    }
 }
 
 function mostrarError(mensaje){

@@ -22,11 +22,11 @@ async function submitRegistro(e){
         nss
     }
 
-    const {id} = await registrar(paciente);
-
-    if(id){
+    try{
+        const response = await registrar(paciente);
+        alert(response.message)
         window.location.href = "../index.html"
+    }catch(e){
+        alert(e);
     }
-
-
 }

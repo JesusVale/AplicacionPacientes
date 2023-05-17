@@ -15,10 +15,12 @@
         </nav>
     </header>
 
-    <form class="upload-form" method="POST" action="http://localhost:8094/expedientes/uploadFile" enctype="multipart/form-data">
+    <form class="upload-form" id="ea" method="POST" action="http://localhost:8094/expedientes/uploadFile" enctype="multipart/form-data">
         <input type="file" name="file">
         <button type="submit">Enviar archivo</button>
     </form>
+    
     <script src="./js/peticiones.js" type="module"></script>
+    <script src="./js/subir_archivo.js" type="module"></script>
 </body> 
 </html>
